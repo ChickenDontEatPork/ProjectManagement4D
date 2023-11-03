@@ -1,0 +1,36 @@
+name: production-deploy
+on:
+  push:
+    branches: [main]
+
+jobs:
+  lintTest:
+    name: Lint
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.x]
+    steps:
+      - name: Clone Repo ⬇️
+        uses: actions/checkout@v2
+
+      - name: Install
+        run: yarn
+
+      - name: Running Lint
+        run: |
+          yarn lint ||
+          (
+              echo '🔨❌ Yoo, you have a problem in your code. Check linter 🔨❌
+                  Run yarn lint, add changes and try commit again.';
+              false;
+          )
+  deploy:
+    runs-on: self-hosted
+    needs: [lintTest]
+    steps:
+      - name: Copy repository
+        uses: actions/checkout@v3
+
+      - name: Running Docker Compose
+        run: docker compose up -d --build

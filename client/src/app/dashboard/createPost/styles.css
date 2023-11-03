@@ -1,0 +1,89 @@
+/* PostForm */
+.createPost_postForm {
+  @apply items-center rounded-[35px] border-[2px] border-[#545F71] px-[50px] py-[40px] md:h-[570px] md:w-[600px];
+  @media (min-width: 768px) {
+    height: auto;
+  }
+}
+
+.createPost_postForm_typeButton {
+  @apply rounded-[6px] border-[1px] border-[#545F71] px-[20px] py-[8px] text-[12px];
+}
+
+.createPost_postForm_topicInput {
+  @apply h-[30px] w-[100%] rounded-[6px] border-[1px] border-[#545F71] px-[5px] text-[14px] focus:outline-none;
+}
+
+.createPost_postForm_tag {
+  @apply flex w-full flex-row items-center rounded-[6px] bg-[#545F71] px-[10px] py-[10px] text-[12px] text-[#FFFFFF] hover:bg-[#242931] focus:bg-[#242931]  md:px-[10px] md:py-[10px];
+}
+
+.dropdown-content {
+  @apply absolute z-[2] mt-[2px] w-[150px] overflow-auto rounded-[5px] bg-[#545F71] text-[12px] text-[#FFFFFF];
+}
+
+.createPost_create {
+  @apply rounded-[6px] bg-[#545F71] px-[32px] py-[18px] text-[#FFFFFF] hover:bg-[#242931] md:px-[32px] md:py-[18px];
+}
+
+.wrapper {
+  @apply mt-[50px] flex flex-col-reverse !important;
+}
+
+.editor {
+  @apply mt-[20px] min-h-[200px] rounded-t-[6px] border-[1px] border-[#545F71] pl-[5px] pr-[5px] pt-[5px] text-[13px] leading-[15px] tracking-wide md:mt-[-25px] !important;
+}
+
+.toolbar {
+  @apply mt-[-1px] rounded-b-[6px] rounded-t-[0px] border-[1px] border-[#545F71] !important;
+}
+
+.editor_button {
+  @apply border-none !important;
+}
+
+.editor_button:hover {
+  @apply bg-[#d4d8e1];
+}
+
+.rdw-option-active {
+  @apply bg-[#d4d8e1] !important;
+}
+
+/* UploadFile */
+.createPost_uploadFile {
+  @apply h-full rounded-[35px] border-[2px] border-[#545F71] px-[50px] py-[40px] md:h-[654px] md:w-[380px];
+  @media (max-width: 890px) {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+.dropBox {
+  @apply mt-5 flex flex-col items-center justify-center rounded-[12px]  bg-[#fff];
+  /* @apply mt-5 flex flex-col items-center justify-center rounded-[12px] border-4 border-dashed border-[#A8B0C0] bg-[#fff]; */
+}
+
+.uploadFile_button {
+  @media (max-width: 800px) {
+    font-size: 8px;
+  }
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.file-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}

@@ -1,0 +1,49 @@
+name: production-deploy
+on:
+  push:
+    branches: [main, dev]
+
+jobs:
+  lintTest:
+    name: Lint
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.x]
+    steps:
+      - name: Clone Repo ⬇️
+        uses: actions/checkout@v2
+
+      - name: Install
+        run: npm install
+
+      - name: Running Lint
+        run: |
+          npm run lint ||
+          (
+              echo '🔨❌ Yoo, you have a problem in your code. Check linter 🔨❌
+                  Run yarn lint, add changes and try commit again.';
+              false;
+          )
+  deploy:
+    runs-on: self-hosted
+    needs: [lintTest]
+    steps:
+      - name: Copy repository
+        uses: actions/checkout@v3
+
+      - name: Extract branch name
+        shell: bash
+        run: echo "branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
+        id: extract_branch
+
+      - name: Running Docker Compose
+        run: |
+          if [ ${{ steps.extract_branch.outputs.branch }} == "main" ]; then
+              docker compose -f docker-compose.prod.yml up -d --build
+              docker exec projectManagementBackend npm run prisma:prod
+          elif [ ${{ steps.extract_branch.outputs.branch }} == "dev" ]; then
+              docker compose -f docker-compose.dev.yml up -d --build
+              docker exec projectManagementBackendDev npm run prisma:prod
+          fi
+      

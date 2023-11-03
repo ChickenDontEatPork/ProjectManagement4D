@@ -1,0 +1,22 @@
+.AddButton {
+  @apply flex items-center rounded-[6px] border-[1px] bg-[#545F71] px-[1.5vw] py-[1vh] text-[14px] text-[#FFFFFF] hover:bg-[#4a5261];
+}
+.SearchBox {
+  @apply p-2 py-[1vh] text-[14px] focus:outline-none;
+}
+
+.AssignLayout {
+  @apply my-4  flex h-[75%] w-[100%] flex-col gap-[20px] text-ellipsis rounded-[20px] border-0 px-[10px] py-4;
+}
+
+.AssignCard {
+  @apply w-full rounded-[20px] border-[2px] border-[#545F71] px-[2vw] py-[1vh] text-slate-600 md:px-[5vw] md:py-[2vh] lg:px-[3vw];
+}
+
+.AnnounceCard {
+  @apply w-full rounded-[20px] border-[2px] border-[#545F71] px-[2vw] py-[1vh] text-slate-600 md:px-[5vw] md:py-[2vh] lg:px-[3vw];
+}
+
+.deletebin {
+  @apply invisible absolute right-0 top-5 z-20 mr-3 text-[40px] hover:text-red-500 group-hover/item:visible md:top-8;
+}

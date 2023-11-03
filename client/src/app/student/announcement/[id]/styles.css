@@ -1,0 +1,71 @@
+.detailCard {
+  @apply rounded-lg border-2 border-[#9BA5B7] bg-[#FFFFFF] px-5 pb-8 pt-5 sm:w-[650px];
+}
+
+.headDetailCard {
+  @apply mb-4 flex gap-3;
+}
+
+.detailTopic {
+  @apply flex w-full justify-between;
+}
+
+.blockTopic {
+  @apply w-full;
+}
+
+.iconDetailCard {
+  @apply flex w-[50px] items-center justify-center rounded-full bg-[#E89B64] text-center text-[40px] text-white;
+}
+
+.textDetail {
+  @apply pl-14;
+}
+
+.commentCard {
+  @apply mt-5 rounded-lg border-2 border-[#9BA5B7] bg-[#FFFFFF] px-5 pb-4 pt-5 sm:w-[650px];
+}
+
+.userCommentCard {
+  @apply mt-2 flex gap-2;
+}
+
+.addComment {
+  @apply mt-2 w-full rounded-full border-2 border-[#9BA5B7] px-5 py-2;
+}
+
+.iconComment {
+  @apply absolute right-5 top-5 text-lg;
+}
+
+.Comment {
+  @apply relative;
+}
+
+.ck {
+  @apply flex flex-col-reverse rounded-xl;
+}
+
+.ck.ck-editor__editable_inline[dir='ltr'] {
+  @apply flex flex-col;
+}
+
+.ck.ck-editor__top .ck-sticky-panel .ck-toolbar {
+  @apply border-none;
+}
+
+.ck.ck-editor__editable_inline {
+  @apply rounded-xl border-none !important;
+}
+
+.ck.ck-editor__editable.ck-focused:not(.ck-editor__nested-editable) {
+  @apply shadow-none !important;
+}
+
+.editor {
+  @apply rounded-xl border-2 border-[#9BA5B7] px-3;
+}
+
+.commentText {
+  @apply font-bold;
+}

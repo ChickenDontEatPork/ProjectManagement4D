@@ -1,0 +1,3 @@
+.status {
+  @apply mr-4 h-[80%] w-full rounded-lg border-2 border-[#9BA5B7] bg-[#FFFFFF] px-4 py-3 sm:w-[400px];
+}

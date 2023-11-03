@@ -1,0 +1,6 @@
+.husky
+node_modules
+prisma/migrations
+.env
+.env.dev
+.env.prod
